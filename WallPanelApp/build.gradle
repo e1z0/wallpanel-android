@@ -19,8 +19,8 @@ apply plugin: 'com.github.sgtsilvio.gradle.android-retrofix'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.firebase.crashlytics'
+//apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.firebase.crashlytics'
 
 
 def versionMajor = 0
@@ -95,7 +95,7 @@ android {
             buildConfigField "String", BASE_ENVIRONMENT, '"DEV_ENVIRONMENT"'
             applicationId "xyz.wallpanel.app"
             versionName "${versionMajor}.${versionMinor}.${versionPatch} Build ${versionBuild}-DEV"
-            buildConfigField 'Integer', 'CODE', CODE()
+            buildConfigField 'Integer', 'CODE', String.valueOf(CODE())
             buildConfigField 'String', 'HASS_URL', "\"" + HASS_URL() +"\""
             buildConfigField 'String', 'BROKER', "\"" + BROKER() +"\""
             buildConfigField 'String', 'BROKER_PASS', "\"" + BROKER_PASS() +"\""
@@ -191,8 +191,8 @@ dependencies {
 
     // Declare the dependencies for the Crashlytics and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    //implementation 'com.google.firebase:firebase-analytics-ktx'
+    //implementation 'com.google.firebase:firebase-crashlytics-ktx'
 
     // Firebase
     implementation 'com.google.firebase:firebase-core:20.1.1'
